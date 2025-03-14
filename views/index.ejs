@@ -1,0 +1,122 @@
+<%- include('partials/header') %>
+
+<!-- Hero Carousel -->
+<div id="heroCarousel" class="carousel slide mb-5" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        <% if (sliders && sliders.length > 0) { %>
+            <% sliders.forEach((slider, index) => { %>
+                <div class="carousel-item <%= index === 0 ? 'active' : '' %>">
+                    <img src="<%= slider.imageUrl %>" class="d-block w-100" alt="<%= slider.title %>">
+                    <div class="carousel-caption">
+                        <h2><%= slider.title %></h2>
+                        <p><%= slider.description %></p>
+                    </div>
+                </div>
+            <% }) %>
+        <% } else { %>
+            <div class="carousel-item active">
+                <img src="/images/school-1.jpg" class="d-block w-100" alt="School Building">
+                <div class="carousel-caption">
+                    <h1>Welcome to Pushap Vatika Smart School</h1>
+                    <p>Every Child Is Genius - Shine the future of your child with us</p>
+                </div>
+            </div>
+        <% } %>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+    </button>
+</div>
+
+<!-- Features Section -->
+<section class="features-section mb-5">
+    <div class="container">
+        <h2 class="text-center mb-4">Why Choose Us?</h2>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="feature-card card h-100">
+                    <div class="card-body">
+                        <div class="feature-icon mb-3">
+                            <i class="fas fa-chalkboard-teacher"></i>
+                        </div>
+                        <h3 class="card-title h5">Modern Education</h3>
+                        <ul class="feature-list">
+                            <li>Smart Classes</li>
+                            <li>English Medium</li>
+                            <li>Special Full Day Activities</li>
+                            <li>Extra Classes for Weak Students</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="feature-card card h-100">
+                    <div class="card-body">
+                        <div class="feature-icon mb-3">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3 class="card-title h5">Safety & Infrastructure</h3>
+                        <ul class="feature-list">
+                            <li>CCTV Surveillance</li>
+                            <li>Big Playground</li>
+                            <li>Transport Facility</li>
+                            <li>Safe Learning Environment</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="feature-card card h-100">
+                    <div class="card-body">
+                        <div class="feature-icon mb-3">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h3 class="card-title h5">Student Excellence</h3>
+                        <ul class="feature-list">
+                            <li>Self Confident Students</li>
+                            <li>Effective Communication</li>
+                            <li>Creative & Imaginative</li>
+                            <li>Well-Mannered Individuals</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Admission CTA -->
+<section class="admission-cta mb-5 py-4 bg-primary text-white">
+    <div class="container text-center">
+        <h2 class="mb-3">Admissions Open for 2024-2025</h2>
+        <p class="lead mb-4">Pre-Nursery to 10th Class | +1, +2 (NIOS)</p>
+        <div class="cta-buttons">
+            <a href="/contact" class="btn btn-light btn-lg me-2">Enquire Now</a>
+            <a href="/about" class="btn btn-outline-light btn-lg">Learn More</a>
+        </div>
+    </div>
+</section>
+
+<!-- Recent Events -->
+<section class="mb-5">
+    <h2 class="text-center mb-4">Recent Events</h2>
+    <div class="row">
+        <% recentEvents.slice(0, 3).forEach(event => { %>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="<%= event.imageUrl %>" class="card-img-top" alt="<%= event.title %>">
+                    <div class="card-body">
+                        <h5 class="card-title"><%= event.title %></h5>
+                        <p class="card-text"><%= event.description %></p>
+                        <p class="text-muted"><small><%= new Date(event.date).toLocaleDateString() %></small></p>
+                    </div>
+                </div>
+            </div>
+        <% }) %>
+    </div>
+</section>
+
+<%- include('partials/footer') %> 

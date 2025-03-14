@@ -1,0 +1,353 @@
+/* Color Variables */
+:root {
+    --primary-green: #0B6623;
+    --secondary-red: #D22B2B;
+    --light-green: #8FBC8F;
+    --white: #FFFFFF;
+    --light-gray: #F5F5F5;
+}
+
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+}
+
+/* Announcement Bar */
+.announcement-bar {
+    font-size: 0.9rem;
+    font-weight: 500;
+    background-color: var(--primary-green) !important;
+}
+
+/* Logo and Branding */
+.school-logo {
+    height: 50px;
+    width: auto;
+}
+
+.brand-text {
+    line-height: 1.2;
+}
+
+.school-name {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--primary-green);
+}
+
+.tagline {
+    font-size: 0.8rem;
+    color: var(--light-green);
+}
+
+.contact-info {
+    font-size: 0.9rem;
+}
+
+.contact-info a {
+    color: var(--primary-green);
+}
+
+.contact-info a:hover {
+    color: var(--secondary-red);
+}
+
+/* Carousel Styles */
+.carousel-item {
+    height: 500px;
+}
+
+.carousel-item img {
+    object-fit: cover;
+    height: 100%;
+}
+
+.carousel-caption {
+    background: rgba(11, 102, 35, 0.8);
+    padding: 20px;
+    border-radius: 5px;
+}
+
+/* Card Styles */
+.card {
+    transition: transform 0.3s ease;
+    margin-bottom: 20px;
+    border: none;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* Leadership Images */
+.leadership-img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.card.h-100 {
+    height: 100% !important;
+}
+
+/* Navigation */
+.navbar {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    background-color: var(--white) !important;
+}
+
+.navbar-brand {
+    font-weight: bold;
+}
+
+.nav-link {
+    color: var(--primary-green) !important;
+}
+
+.nav-link:hover {
+    color: var(--secondary-red) !important;
+}
+
+.nav-link.active {
+    color: var(--secondary-red) !important;
+    font-weight: 600;
+}
+
+.nav-link.active::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: var(--secondary-red);
+    margin-top: 2px;
+}
+
+.btn-primary {
+    background-color: var(--primary-green) !important;
+    border-color: var(--primary-green) !important;
+}
+
+.btn-primary:hover {
+    background-color: var(--light-green) !important;
+    border-color: var(--light-green) !important;
+}
+
+/* Footer */
+footer {
+    margin-top: 50px;
+    padding: 40px 0 20px;
+    background-color: var(--primary-green) !important;
+    color: var(--white);
+    position: relative;
+}
+
+footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(to right, var(--secondary-red), var(--light-green));
+}
+
+footer h5 {
+    color: var(--white);
+    margin-bottom: 15px;
+    font-weight: 600;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+footer h5::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 50px;
+    height: 2px;
+    background-color: var(--light-green);
+}
+
+footer p {
+    color: var(--white);
+    opacity: 0.9;
+}
+
+footer .footer-logo {
+    background-color: var(--white);
+    padding: 5px;
+    border-radius: 4px;
+}
+
+footer a {
+    color: var(--light-green);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: var(--white);
+}
+
+footer .text-muted {
+    color: var(--light-green) !important;
+}
+
+footer ul.list-unstyled li {
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 20px;
+}
+
+footer ul.list-unstyled li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: var(--light-green);
+}
+
+footer .contact-section p {
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+}
+
+footer .contact-section i {
+    margin-right: 10px;
+    color: var(--light-green);
+}
+
+footer .copyright-section {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+footer .admission-info {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+footer .admission-info h5 {
+    color: var(--white);
+    margin-bottom: 10px;
+}
+
+footer .admission-info p {
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+}
+
+footer .admission-info .text-danger {
+    color: var(--secondary-red) !important;
+    font-weight: bold;
+}
+
+/* Features Section */
+.feature-card {
+    text-align: center;
+    border: none;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    background-color: var(--white);
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+}
+
+.feature-icon {
+    font-size: 2.5rem;
+    color: var(--primary-green);
+}
+
+.feature-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.feature-list li {
+    margin-bottom: 0.5rem;
+    color: #555;
+}
+
+.feature-list li:before {
+    content: "✓";
+    color: var(--primary-green);
+    margin-right: 0.5rem;
+}
+
+/* Admission CTA */
+.admission-cta {
+    background: linear-gradient(135deg, var(--primary-green), var(--light-green));
+}
+
+.cta-buttons .btn {
+    padding: 0.8rem 2rem;
+    font-weight: 500;
+}
+
+.btn-outline-light:hover {
+    background-color: var(--secondary-red);
+    border-color: var(--secondary-red);
+}
+
+/* Admin Dashboard */
+.admin-header {
+    margin-bottom: 30px;
+}
+
+.table img {
+    border-radius: 4px;
+}
+
+/* Form Styles */
+.form-control:focus {
+    border-color: var(--light-green);
+    box-shadow: 0 0 0 0.2rem rgba(11, 102, 35, 0.25);
+}
+
+/* Button Styles */
+.btn {
+    border-radius: 4px;
+    padding: 8px 20px;
+}
+
+.btn-danger {
+    background-color: var(--secondary-red) !important;
+    border-color: var(--secondary-red) !important;
+}
+
+/* Gallery Grid */
+.gallery-item {
+    margin-bottom: 30px;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .carousel-item {
+        height: 300px;
+    }
+    
+    .carousel-caption {
+        padding: 10px;
+    }
+    
+    .carousel-caption h1 {
+        font-size: 1.5rem;
+    }
+} 

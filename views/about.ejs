@@ -1,0 +1,71 @@
+<%- include('partials/header') %>
+
+<div class="container">
+    <div class="row mb-5">
+        <div class="col-md-12">
+            <h1 class="text-center mb-4">About Spring School</h1>
+            <div class="card">
+                <div class="card-body">
+                    <p class="lead">Welcome to Spring School, where we nurture young minds and build future leaders.</p>
+                    <p>Our institution is dedicated to providing quality education and holistic development for all our students.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mb-5">
+        <h2 class="text-center mb-4">Our Leadership</h2>
+        <div class="col-md-4">
+            <div class="card h-100">
+                <% if (staffImages.ceo) { %>
+                    <img src="<%= staffImages.ceo %>" class="card-img-top leadership-img" alt="CEO">
+                <% } %>
+                <div class="card-body text-center">
+                    <h3 class="card-title">CEO</h3>
+                    <h4 class="card-subtitle mb-2 text-muted"><%= schoolInfo.ceo %></h4>
+                    <p class="card-text mt-3">Leading our institution with vision and dedication, guiding us towards excellence in education.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card h-100">
+                <% if (staffImages.director) { %>
+                    <img src="<%= staffImages.director %>" class="card-img-top leadership-img" alt="Director">
+                <% } %>
+                <div class="card-body text-center">
+                    <h3 class="card-title">Director</h3>
+                    <h4 class="card-subtitle mb-2 text-muted"><%= schoolInfo.director %></h4>
+                    <p class="card-text mt-3">Overseeing our academic programs and ensuring continuous growth and innovation.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card h-100">
+                <% if (staffImages.principal) { %>
+                    <img src="<%= staffImages.principal %>" class="card-img-top leadership-img" alt="Principal">
+                <% } %>
+                <div class="card-body text-center">
+                    <h3 class="card-title">Principal</h3>
+                    <h4 class="card-subtitle mb-2 text-muted"><%= schoolInfo.principal %></h4>
+                    <p class="card-text mt-3">Managing daily operations and fostering an environment of academic excellence and personal growth.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="card-title">Our Mission</h3>
+                    <p>To provide quality education that empowers students with knowledge, skills, and values needed to succeed in life and contribute positively to society.</p>
+                    
+                    <h3 class="card-title mt-4">Our Vision</h3>
+                    <p>To be a leading educational institution that nurtures creative thinking, promotes academic excellence, and develops well-rounded individuals.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include('partials/footer') %> 

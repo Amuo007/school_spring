@@ -1,0 +1,30 @@
+<%- include('partials/header') %>
+
+<div class="container">
+    <h1 class="text-center mb-5">School Gallery</h1>
+
+    <div class="row">
+        <% if (events && events.length > 0) { %>
+            <% events.forEach(event => { %>
+                <div class="col-md-4 mb-4">
+                    <div class="card gallery-item">
+                        <img src="<%= event.imageUrl %>" class="card-img-top" alt="<%= event.title %>">
+                        <div class="card-body">
+                            <h5 class="card-title"><%= event.title %></h5>
+                            <p class="card-text"><%= event.description %></p>
+                            <p class="text-muted"><small><%= new Date(event.date).toLocaleDateString() %></small></p>
+                        </div>
+                    </div>
+                </div>
+            <% }) %>
+        <% } else { %>
+            <div class="col-12">
+                <div class="alert alert-info text-center">
+                    No events to display yet. Check back soon!
+                </div>
+            </div>
+        <% } %>
+    </div>
+</div>
+
+<%- include('partials/footer') %> 

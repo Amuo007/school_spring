@@ -1,0 +1,92 @@
+<%- include('partials/header') %>
+
+<div class="container">
+    <div class="row mb-5">
+        <div class="col-md-12">
+            <h1 class="text-center mb-4">Contact Us</h1>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h3 class="card-title">Contact Information</h3>
+                    <hr>
+                    <div class="mb-3">
+                        <h5>Address</h5>
+                        <p><%= contactInfo.address %></p>
+                    </div>
+                    <div class="mb-3">
+                        <h5>Phone Numbers</h5>
+                        <% contactInfo.phones.forEach(phone => { %>
+                            <p class="mb-1">
+                                <a href="tel:<%= phone %>" class="text-decoration-none">
+                                    <%= phone %>
+                                </a>
+                            </p>
+                        <% }) %>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="card-title">Send us a Message</h3>
+                    <hr>
+                    <% if (typeof success !== 'undefined') { %>
+                        <div class="alert alert-success">
+                            <%= success %>
+                        </div>
+                    <% } %>
+                    <% if (typeof error !== 'undefined') { %>
+                        <div class="alert alert-danger">
+                            <%= error %>
+                        </div>
+                    <% } %>
+                    <form action="/contact" method="POST">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="name" name="name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" name="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="subject" class="form-label">Subject</label>
+                            <input type="text" class="form-control" id="subject" name="subject" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-5">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="card-title mb-4">Location Map</h3>
+                    <div class="ratio ratio-16x9">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3427.0647325474123!2d76.91543661744384!3d30.79699699999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390f85ff7e5a0001%3A0x8a4a4000f000000!2sShiv%20Colony%2C%20Pinjore%2C%20Haryana%20134102!5e0!3m2!1sen!2sin!4v1629800000000!5m2!1sen!2sin"
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include('partials/footer') %> 
